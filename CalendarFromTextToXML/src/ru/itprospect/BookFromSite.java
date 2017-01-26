@@ -21,7 +21,7 @@ public class BookFromSite {
 	
 	public void DetectChapter() {
 		//TODO Здесь пишем замену не читаемых символов
-		fullText = fullText.replaceAll("\ufffd", "-").replace("--", "-");
+		fullText = fullText.replaceAll("\ufffd", "-").replace("--", "-").replaceAll("\\(.+\\)", "");
 		
 		String TextBezKnigi = poluchitTextBezKnigi(fullText);
 		//System.out.println(TextBezKnigi);
