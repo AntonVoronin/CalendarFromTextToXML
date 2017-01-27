@@ -158,7 +158,7 @@ public class BookFromSite {
 	}
 
 	public void convertPsalms() {
-		if (book.equalsIgnoreCase("PS")) {
+		if (book.equalsIgnoreCase("PS") || book.equalsIgnoreCase("оя")) {
 			for (ReadStartEnd otrivok : otr) {
 				if (otrivok!=null) {
 					int[] start = ConvertNumberPsalms.convertToSeptuagint(otrivok.chapterStart, otrivok.stihStart);

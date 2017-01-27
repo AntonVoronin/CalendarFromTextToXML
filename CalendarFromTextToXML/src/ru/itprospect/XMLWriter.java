@@ -95,7 +95,7 @@ public class XMLWriter {
 						ElFragment.setAttribute("stihStart", String.valueOf(otrivok.stihStart));
 						ElFragment.setAttribute("chapterEnd", chEndS);
 						ElFragment.setAttribute("stihEnd", String.valueOf(otrivok.stihEnd));
-						if (b.book.equalsIgnoreCase("PS")) {
+						if (b.book.equalsIgnoreCase("PS") || b.book.equalsIgnoreCase("оя")) {
 							ElFragment.setAttribute("chapterStartMasoretic", String.valueOf(otrivok.chapterStartMasoretic));
 							ElFragment.setAttribute("stihStartMasoretic", String.valueOf(otrivok.stihStartMasoretic));
 							ElFragment.setAttribute("chapterEndMasoretic", String.valueOf(otrivok.chapterEndMasoretic));
