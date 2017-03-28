@@ -28,6 +28,7 @@ public class ParsTxt {
 	public void ParsIt() {
 		AllBook = new ArrayList<BookFromSite>();
 		Date currDate=null;
+		String currDateType = "";
 		int a = 0;
 		
 		//Чтение текстового файла
@@ -46,6 +47,12 @@ public class ParsTxt {
 					SimpleDateFormat format = new SimpleDateFormat();
 					format.applyPattern("yyyy-MM-dd");
 					currDate = format.parse(strDate);
+					
+					currDateType = "";
+					int indexType = strLine.lastIndexOf("   ");
+					if (indexType>0) {
+						currDateType = strLine.substring(indexType+3).trim();
+					}
 				}
 				else if (a<2) {
 					continue;
@@ -62,7 +69,7 @@ public class ParsTxt {
 					//Добавляем книгу
 					GregorianCalendar cal = new GregorianCalendar();
 					cal.setTime(currDate);
-					ArrayList<BookFromSite> thisBook = ReadingsToBooks.StringToBooks(textRead, cal, textType, 0);
+					ArrayList<BookFromSite> thisBook = ReadingsToBooks.StringToBooks(textRead, cal, textType, 0, currDateType);
 					AllBook.addAll(thisBook);
 				}
 			}

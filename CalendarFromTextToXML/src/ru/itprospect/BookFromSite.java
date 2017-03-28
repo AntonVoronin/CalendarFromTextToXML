@@ -13,6 +13,7 @@ public class BookFromSite {
 	int num;
 	String fullText;
 	String type;
+	String dateType;
 	String link;
 	String book;
 	Boolean isOrdinary=false;

@@ -6,10 +6,10 @@ import java.util.GregorianCalendar;
 public class ReadingsToBooks {
 
 	public static ArrayList<BookFromSite> StringToBooks(String readingText, GregorianCalendar startDate) {
-		return StringToBooks(readingText, startDate, "", 0);
+		return StringToBooks(readingText, startDate, "", 0, "");
 	}
 	
-	public static ArrayList<BookFromSite> StringToBooks(String readingText, GregorianCalendar startDate, String type, int alt) {
+	public static ArrayList<BookFromSite> StringToBooks(String readingText, GregorianCalendar startDate, String type, int alt, String dateType) {
 		
 		readingText = readingText.replaceAll("Phlm ", "Phlm 1:").replaceAll("phlm ", "Phlm 1:").replaceAll("2 John ", "2 John 1:").replaceAll("3 John ", "3 John 1:")
 				.replaceAll("2 jn ", "2 jn 1:").replaceAll("3 jn ", "3 jn 1:").replaceAll("1 Sm 3:9; Jn 6:68c", "1 Sm 3:9")
@@ -48,7 +48,7 @@ public class ReadingsToBooks {
 				book.fullText = varText[x];
 				book.detectTextKnigi(textPredBook);
 				book.type = type;
-					
+				book.dateType = dateType;
 				book.alt = alt;
 				
 				book.DetectChapter();

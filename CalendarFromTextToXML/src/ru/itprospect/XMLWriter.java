@@ -66,6 +66,9 @@ public class XMLWriter {
 				PrevDate = CurDate;
 				ElDate = doc.createElement("Date");
 				ElDate.setAttribute("date", String.format("%tF", CurDate));
+				if (! b.dateType.isEmpty()) {
+					ElDate.setAttribute("type", b.dateType);
+				}
 				ElYear.appendChild(ElDate);
 			}
 			
