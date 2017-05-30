@@ -53,6 +53,13 @@ public class ParsTxt {
 					if (indexType>0) {
 						currDateType = strLine.substring(indexType+3).trim();
 					}
+					else if (strLine.length()>16) {
+						String analizType = strLine.substring(17).trim();
+						System.out.println(analizType);
+						if (analizType.length()>0) {
+							currDateType = analizType;
+						}
+					}
 				}
 				else if (a<2) {
 					continue;
