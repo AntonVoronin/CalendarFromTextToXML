@@ -47,13 +47,17 @@ public class ReadingsToBooks {
 				book.dateStr = DateStr;
 				book.fullText = varText[x];
 				book.detectTextKnigi(textPredBook);
+				if (type.contains("[это рядовое чтение]")) {
+					book.isOrdinary = true;
+					type = type.replace("[это рядовое чтение]", "").trim();
+				}
 				book.type = type;
 				book.dateType = dateType;
 				book.alt = alt;
 				
 				book.DetectChapter();
 				book.convertPsalms();
-				//TODO отрывки по-порядку
+				//отрывки по-порядку
 				book.sortFragments();
 				System.out.println(book);
 				books.add(book);

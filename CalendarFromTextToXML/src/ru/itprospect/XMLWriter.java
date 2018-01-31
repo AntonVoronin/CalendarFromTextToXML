@@ -78,7 +78,10 @@ public class XMLWriter {
 				ElBook.setAttribute("type", b.type);
 				ElBook.setAttribute("book", b.book);
 				if (b.alt>0) ElBook.setAttribute("alt", String.valueOf(b.alt));
-				//ElBook.setAttribute("isOrdinary", b.isOrdinary.toString());
+				//TODO
+				if (b.isOrdinary) {
+					ElBook.setAttribute("isOrdinary", b.isOrdinary.toString());
+				}
 				ElDate.appendChild(ElBook);
 
 
