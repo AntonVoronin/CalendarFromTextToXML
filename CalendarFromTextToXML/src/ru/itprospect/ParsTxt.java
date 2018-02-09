@@ -22,7 +22,7 @@ public class ParsTxt {
 
 	public ParsTxt(String FileNameCatholic) {
 		this.FileNameCatholic = FileNameCatholic;
-		FileNameCatholicXML = FileNameCatholic + ".xml";
+		FileNameCatholicXML = FileNameCatholic.substring(0, FileNameCatholic.length()-4) + ".xml";
 	}
 	
 	public void ParsIt() {
