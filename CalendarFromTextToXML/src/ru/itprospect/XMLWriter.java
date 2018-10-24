@@ -37,6 +37,7 @@ public class XMLWriter {
 		ElBibleCalendar.setAttribute("conf", "catholic");
 		
 		GregorianCalendar PrevDate = AllBook.get(0).date;
+		String PrevDateType = AllBook.get(0).dateType;
 		int PrevYear = PrevDate.get(Calendar.YEAR);
 		
 		Element ElYear = doc.createElement("Year");
@@ -45,6 +46,9 @@ public class XMLWriter {
 
 		Element ElDate = doc.createElement("Date");
 		ElDate.setAttribute("date", String.format("%tF", PrevDate));
+		if (! PrevDateType.isEmpty()) {
+			ElDate.setAttribute("type", PrevDateType);
+		}
 		ElYear.appendChild(ElDate);
 		
 		for (BookFromSite b : AllBook) {

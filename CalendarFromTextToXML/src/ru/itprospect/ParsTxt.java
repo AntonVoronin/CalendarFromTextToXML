@@ -67,7 +67,7 @@ public class ParsTxt {
 				else if(strLine.length()>0){
 					String textType = "";
 					String textRead = strLine;
-					int indexType = strLine.lastIndexOf("   ");
+					int indexType = strLine.indexOf("   ");
 					
 					if (indexType==-1){
 						indexType = strLine.lastIndexOf("[это рядовое чтение]");
