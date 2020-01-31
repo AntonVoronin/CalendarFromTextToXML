@@ -59,7 +59,7 @@ public class ReadingsToBooks {
 				book.convertPsalms();
 				//отрывки по-порядку
 				book.sortFragments();
-				System.out.println(book);
+				//System.out.println(book);
 				books.add(book);
 
 				textPredBook = book.book; 

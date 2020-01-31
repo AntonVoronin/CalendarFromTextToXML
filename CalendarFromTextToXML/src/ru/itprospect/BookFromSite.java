@@ -159,6 +159,11 @@ public class BookFromSite {
 	}
 
 	public void convertPsalms() {
+		
+		//Для католического календаря указаны номера псалмов, как в английской версии (Масоретский текст, Вульгата)
+		//нам нужно сконвертировать номера в синодальный перевод, т.к. в BibleQuote такая нумерация.
+		//
+		//В православном календаре псалмы не встречаются, поэтому данная процедура не влияет.
 		if (book.equalsIgnoreCase("PS") || book.equalsIgnoreCase("ПС")) {
 			for (ReadStartEnd otrivok : otr) {
 				if (otrivok!=null) {
